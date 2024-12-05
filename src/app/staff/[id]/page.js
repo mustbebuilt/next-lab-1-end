@@ -4,7 +4,7 @@ export async function generateMetadata({ params }) {
   const { id } = await params;
   const staff = await fetchStaffDetails(id);
   return {
-    title: staff.first_name || "Staff Details",
+    title: `${staff.first_name} ${staff.last_name}` || "Staff Details",
   };
 }
 const StaffDetails = async ({ params }) => {

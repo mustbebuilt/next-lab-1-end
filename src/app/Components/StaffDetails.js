@@ -17,7 +17,7 @@ const StaffDetails = (props) => {
       });
   }, [id]);
   return (
-    <div className='container'>
+    <div>
       <h2>Staff Details</h2>
       <div>
         <p>
