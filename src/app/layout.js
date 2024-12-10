@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Navbar from "./Components/Navbar";
+import Banner from "./Components/Banner";
 import "./globals.css";
 export default function RootLayout({ children }) {
   return (
@@ -9,14 +9,7 @@ export default function RootLayout({ children }) {
           <header>
             <Navbar />
             <h1>My Next Demo Page</h1>
-            <div>
-              <Image
-                src='/images/building_cropped.jpg'
-                width='800'
-                height='200'
-                alt=''
-              />
-            </div>
+            <Banner />
           </header>
           {children}
           <footer>
