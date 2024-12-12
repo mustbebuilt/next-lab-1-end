@@ -27,4 +27,20 @@ const fetchStaffDetails = async (id) => {
   }
 };
 
-export { fetchStaff, fetchStaffDetails };
+const fetchSearch = async (searchquery) => {
+  try {
+    const searchPattern = `%${searchquery}%`;
+    const query =
+      "SELECT * FROM stafflab WHERE last_name LIKE ? OR first_name LIKE ?";
+    const [rows] = await connection.execute(query, [
+      searchPattern,
+      searchPattern,
+    ]);
+    return rows || null;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch data.");
+  }
+};
+
+export { fetchStaff, fetchStaffDetails, fetchSearch };
